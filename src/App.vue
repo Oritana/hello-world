@@ -1,26 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- components内で定義したvueファイルを(変数名:Clock)記載。ClockScreen.vueに定義されたhtml要素がApp.vueで表示される -->
+  <Clock/>      
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//使用するClockScreen.vueファイルをimport                                
+import Clock from './components/ClockScreen.vue'
 
+//importしたVueファイルをcomponents内で定義
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Clock
   }
 }
 </script>
 
 <style>
+/* ClockScreen.vueを呼び出しているApp.vueのスタイル変更 */
+html,
+body {
+  height: 100%;
+  margin: unset;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
 }
 </style>
